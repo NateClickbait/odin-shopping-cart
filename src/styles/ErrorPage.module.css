@@ -1,0 +1,19 @@
+.error {
+  background-color: rgb(56, 118, 211);
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 100px 100px 100px;
+  gap: 20px;
+}
+
+.unhappy {
+  font-size: 10rem;
+  font-weight: normal;
+}
+
+.errorMessage {
+  font-size: 1.5rem;
+}
