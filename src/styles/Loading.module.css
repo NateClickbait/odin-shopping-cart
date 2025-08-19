@@ -1,0 +1,23 @@
+.spinnerContainer {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+.spinner {
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+  border: 8px solid rgb(203, 203, 203);
+  border-top: 8px solid rgb(154, 154, 154);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
