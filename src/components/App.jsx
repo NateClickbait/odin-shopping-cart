@@ -1,6 +1,15 @@
 import { useState } from 'react'
-import '../styles/App.module.css'
+import styles from '../styles/App.module.css'
 
-const App = () => <h1>Our First Test</h1>;
+import Header from './Header';
+
+function App() {
+  return (
+    <>
+      <Header />
+      <main className={styles.main}></main>
+    </>
+  );
+}
 
 export default App

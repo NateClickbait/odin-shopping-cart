@@ -1,0 +1,40 @@
+.mainHeader {
+  height: var(--header-size);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  background-color: var(--header-color);
+}
+
+.companyInfo {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+  width: 3rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.buttons > .link {
+  font-size: 1.2rem;
+}
+
+.shoppingCart > svg {
+  width: 2rem;
+}
