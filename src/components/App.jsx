@@ -7,6 +7,7 @@ import ErrorPage from './ErrorPage';
 
 function App() {
   const [products, setProducts] = useState([]);
+  const [inCart, setInCart] = useState([]);
 
   useEffect(() => {
     async function getProducts() {

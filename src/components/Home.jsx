@@ -4,7 +4,8 @@ import Loading from "./Loading";
 function Home() {
   return (
     <div className={styles.home}>
-      <Loading />
+      
+      {/* <Loading /> */}
     </div>
   );
 }

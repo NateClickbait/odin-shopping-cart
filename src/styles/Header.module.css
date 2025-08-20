@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10px 0 10px;
+  padding: 0 0 0 10px;
   background-color: var(--header-color);
 }
 
@@ -28,6 +28,7 @@
 .buttons {
   display: flex;
   align-items: center;
+  height: 100%;
   gap: 30px;
 }
 
@@ -35,6 +36,34 @@
   font-size: 1.2rem;
 }
 
+.shopping {
+  position: relative;
+  padding: 0;
+  height: 100%;
+}
+
+.shoppingCart {
+  height: 100%;
+  background-color: var(--header-color);
+  border-radius: none;
+}
+
 .shoppingCart > svg {
   width: 2rem;
+}
+
+.shoppingCartList {
+  border-top: 3px solid black;
+  position: absolute;
+  top: var(--header-size);
+  right: -410px;
+  height: calc(100vh - var(--header-size));
+  width: 400px;
+  background-color: var(--header-color-transparent);
+  transition: right 0.5s ease-out;
+}
+
+.shoppingCartList.open {
+  right: -10px;
+  transition: right 0.5 ease-in;
 }
