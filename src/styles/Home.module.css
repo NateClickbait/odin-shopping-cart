@@ -1,4 +1,28 @@
 .home {
   height: calc(100% - var(--header-size));
   margin-top: var(--header-size);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+}
+
+.hook {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.message {
+  font-size: 4rem;
+  width: 15ch;
+}
+
+.author {
+  font-size: 2rem;
+}
+
+.shop {
+  font-size: 1.5rem;
+  padding: 20px 30px 20px 30px;
+  background-color: var(--header-color);
+  border-radius: 10px;
 }

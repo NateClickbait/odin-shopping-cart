@@ -37,4 +37,30 @@ describe.skip('Home Component', () => {
     const homepageMessage = screen.getByText(`The best deals, the best steals!!!`);
     expect(homepageMessage).toBeInTheDocument();
   });
+
+  it('renders author of main message', () => {
+    renderWithRouter();
+    const homepageMessage = screen.getByText(`- Emi Sama, CEO`);
+    expect(homepageMessage).toBeInTheDocument();
+  })
+
+  it('renders shop button', () => {
+    renderWithRouter();
+    const shopButton = screen.getByRole('link', {name: /^shop now!$/i});
+    expect(shopButton).toBeInTheDocument();
+  });
+
+  it('clicking on shop now! sends user to /shop', () => {
+    renderWithRouter();
+    const shopButton = screen.getByRole('link', {name: /^shop now!$/i});
+
+    expect(shopButton).toHaveAttribute('href', '/shop');
+  });
+
+  it('renders content display', () => {
+    renderWithRouter();
+    const contentDisplay = screen.getByRole('region', {name: /^product display$/i});
+
+    expect(contentDisplay).toBeInTheDocument();
+  })
 });

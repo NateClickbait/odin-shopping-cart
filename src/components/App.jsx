@@ -28,8 +28,8 @@ function App() {
 
   return (
     <>
-      <Header />
-      <Outlet />
+      <Header inCart={inCart}/>
+      <Outlet context={products}/>
     </>
   );
 }

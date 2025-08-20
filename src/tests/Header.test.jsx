@@ -61,7 +61,7 @@ describe("Header component", () => {
     expect(home).toHaveAttribute('href', '/');
   })
 
-  it('clicking on home sends user to /shop', async () => {
+  it('clicking on shop sends user to /shop', async () => {
     renderWithRouter();
     const shop = screen.getByRole('link', {name: /^shop$/i});
 
