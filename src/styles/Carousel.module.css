@@ -6,7 +6,8 @@
   border: 2px solid var(--header-color);
   border-radius: 10px;
   padding: 20px;
-  background-color: rgb(212, 211, 211);
+  background-color: rgb(212, 212, 212);
+  z-index: 0;
 }
 
 .previous, .next {

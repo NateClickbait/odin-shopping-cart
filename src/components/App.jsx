@@ -14,6 +14,12 @@ function App() {
       try {
         const response = await fetch('https://fakestoreapi.com/products');
         const data = await response.json();
+
+        //lets browser cache images
+        for (let i = 0; i < data.length; ++i) {
+          await fetch(data[i].image);
+        }
+
         setProducts(data);
         console.log(data);
       }

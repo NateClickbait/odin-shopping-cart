@@ -8,6 +8,7 @@
   justify-content: space-between;
   padding: 0 0 0 10px;
   background-color: var(--header-color);
+  z-index: 1;
 }
 
 .companyInfo {
