@@ -3,7 +3,7 @@ import Carousel from "./Carousel";
 import {Link, useOutletContext} from "react-router-dom";
 
 function Home() {
-  const products = useOutletContext();
+  const {products} = useOutletContext();
 
   return (
     <div className={styles.home}>

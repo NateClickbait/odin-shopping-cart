@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <Header inCart={inCart}/>
-      <Outlet context={products}/>
+      <Outlet context={{products: products, onSetInCart: setInCart}}/>
     </>
   );
 }
