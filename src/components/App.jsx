@@ -7,7 +7,8 @@ import ErrorPage from './ErrorPage';
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [inCart, setInCart] = useState([]);
+  //key: title, value: numItems
+  const [inCart, setInCart] = useState(new Map());
 
   useEffect(() => {
     async function getProducts() {
@@ -34,8 +35,8 @@ function App() {
 
   return (
     <>
-      <Header inCart={inCart}/>
-      <Outlet context={{products: products, onSetInCart: setInCart}}/>
+      <Header inCart={inCart} products={products}/>
+      <Outlet context={{products: products, onSetInCart: setInCart, inCart: inCart}}/>
     </>
   );
 }

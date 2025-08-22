@@ -2,8 +2,9 @@ import styles from '../styles/Header.module.css';
 import companyIcon from '../assets/Emi7.jpg';
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from 'react';
+import Loading from './Loading';
 
-function Header() {
+function Header({inCart, products}) {
   const navigate = useNavigate();
   const [displayShoppingCartList, setDisplayShoppingCartList] = useState(false);
   const combinedStylesShoppingCartList = (displayShoppingCartList) ? 
