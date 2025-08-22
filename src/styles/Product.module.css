@@ -1,12 +1,86 @@
 .productContainer {
+  height: calc(100% - var(--header-size));
   display: flex;
   justify-content: center;
+  margin-top: var(--header-size);
 }
 
 .productPage {
   width: 1000px;
-  margin-top: var(--header-size);
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 2fr 1fr;
+  column-gap: 10px;
+}
+
+.imageContainer {
+  padding: 50px 0 50px 0;
+  display: grid;
+  place-items: center;
+}
+
+.productImage {
+  height: 500px;
+  object-fit: contain;
+}
+
+.imageContainer, .description {
+  border: 1px solid var(--header-color);
+  border-top: none;
+}
+
+.placeHolder, .importantInfo {
+  border: 1px solid var(--header-color);
+  border-top: none;
+  border-bottom: none;
+  background-color: var(--header-color-transparent);
+}
+
+.importantInfo {
+  padding: 20px;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.rating {
+  font-size: 1.2rem;
+}
+
+.priceAndBuy {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 5px;
+}
+
+.description {
+  padding: 20px;
+}
+
+.price {
+  font-size: 1.5rem;
+}
+
+.addToCart {
+  background-color: var(--header-color);
+}
+
+.purchase {
+  display: flex;
+  gap: 10px;
+}
+
+.amount, .addToCart {
+  width: 50%;
+}
+
+.amount {
+  text-align: center;
+  font-size: 1.2rem;
 }
