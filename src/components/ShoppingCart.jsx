@@ -26,8 +26,8 @@ function ShoppingCart() {
 
   return (
     <main className={styles.shoppingCart}>
-      <h2>Shopping Cart</h2>
-      {(inCart.size === 0) ? (<p>Shopping Cart is Empty!</p>) : (
+      <h2 className={styles.pageTitle}>Shopping Cart</h2>
+      {(inCart.size === 0) ? (<p className={styles.empty}>Shopping Cart is Empty!</p>) : (
         <>
           {productsInCart.map((product) => {
             return (
@@ -54,6 +54,7 @@ function ShoppingCart() {
                   <button 
                     aria-label='delete item'
                     onClick={() => deleteItem(product.title)}
+                    className={styles.delete}
                   >
                     X
                   </button>

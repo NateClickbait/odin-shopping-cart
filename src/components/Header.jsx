@@ -6,21 +6,9 @@ import Loading from './Loading';
 
 function Header({inCart, products}) {
   const navigate = useNavigate();
-  const [displayShoppingCartList, setDisplayShoppingCartList] = useState(false);
-  const combinedStylesShoppingCartList = (displayShoppingCartList) ? 
-    `${styles.shoppingCartList} ${styles.open}` : `${styles.shoppingCartList}`;
 
   function navigateToShoppingPage() {
-    setDisplayShoppingCartList(false);
     navigate('/shopping-cart');
-  }
-
-  function openShoppingCartList() {
-    setDisplayShoppingCartList(true);
-  }
-
-  function closeShoppingCartList() {
-    setDisplayShoppingCartList(false);
   }
 
   return (
@@ -32,10 +20,7 @@ function Header({inCart, products}) {
       <div className={styles.buttons}>
         <Link to='/' className={styles.link}>Home</Link>
         <Link to='/shop' className={styles.link}>Shop</Link>
-        <div 
-          className={styles.shopping}
-          onMouseLeave={closeShoppingCartList}
-        >
+        <div className={styles.shopping}>
           {(inCart.size === 0) ? <></> : (
             <div className={styles.numItems}>
               <p>{inCart.size}</p>
@@ -44,7 +29,6 @@ function Header({inCart, products}) {
           <button 
             aria-label='shopping cart' 
             className={styles.shoppingCart}
-            onMouseOver={openShoppingCartList}
             onClick={navigateToShoppingPage}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -58,13 +42,6 @@ function Header({inCart, products}) {
               9H15V11H16L17.11 9M18.78 6H15V8H17.67L18.78 6M6.14 6L7.08 8H10V6H6.14Z" />
             </svg>
           </button>
-          <aside 
-            className={combinedStylesShoppingCartList} 
-            aria-label='shopping cart list'
-            role='region'
-          >
-            <Link to='/shopping-cart'>Shopping Cart</Link>
-          </aside>
         </div>
       </div>
     </header>

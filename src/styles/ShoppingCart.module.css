@@ -3,18 +3,35 @@
   padding: 20px 50px 20px 50px;
 }
 
+.empty {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.pageTitle {
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
 .product, .beginning, .end {
   display: flex;
 }
 
+.beginning {
+  gap: 20px;
+}
+
 .end {
+  min-width: 200px;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
 }
 
 .product {
   justify-content: space-between;
   border-top: 1px solid var(--header-color);
+  padding: 10px 0 10px 0;
 }
 
 .product:last-of-type {
@@ -23,9 +40,22 @@
 
 .image {
   width: 100px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.amount {
+  text-align: center;
+  width: 50px;
+  height: 25px;
+}
+
+.delete {
+  background-color: var(--header-color);
 }
 
 .total {
   justify-self: end;
   padding-right: 60px;
+  font-size: 1.5rem;
 }
