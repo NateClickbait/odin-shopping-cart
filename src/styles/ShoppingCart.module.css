@@ -1,0 +1,31 @@
+.shoppingCart {
+  margin-top: var(--header-size);
+  padding: 20px 50px 20px 50px;
+}
+
+.product, .beginning, .end {
+  display: flex;
+}
+
+.end {
+  align-items: center;
+  gap: 10px;
+}
+
+.product {
+  justify-content: space-between;
+  border-top: 1px solid var(--header-color);
+}
+
+.product:last-of-type {
+  border-bottom: 1px solid var(--header-color);
+}
+
+.image {
+  width: 100px;
+}
+
+.total {
+  justify-self: end;
+  padding-right: 60px;
+}

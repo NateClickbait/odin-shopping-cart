@@ -61,6 +61,7 @@ function Product() {
                   aria-label='number of items'
                   min='1'
                   className={styles.amount}
+                  value={amount}
                   onChange={(e) => setAmount(+e.target.value)}
                 />
                 <button

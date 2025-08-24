@@ -36,6 +36,11 @@ function Header({inCart, products}) {
           className={styles.shopping}
           onMouseLeave={closeShoppingCartList}
         >
+          {(inCart.size === 0) ? <></> : (
+            <div className={styles.numItems}>
+              <p>{inCart.size}</p>
+            </div>
+          )} 
           <button 
             aria-label='shopping cart' 
             className={styles.shoppingCart}

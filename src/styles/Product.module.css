@@ -21,6 +21,7 @@
 
 .productImage {
   height: 500px;
+  width: 600px;
   object-fit: contain;
 }
 
