@@ -14,6 +14,7 @@
 .companyInfo {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .icon {
@@ -83,4 +84,16 @@
 .shoppingCartList.open {
   right: -10px;
   transition: right 0.5 ease-in;
+}
+
+@media (max-width: 700px) {
+  .mainHeader {
+    flex-direction: column;
+    height: calc(var(--header-size)*1.75);
+    padding-top: 5px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
 }
