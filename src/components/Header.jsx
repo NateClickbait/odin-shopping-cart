@@ -1,6 +1,7 @@
 import styles from '../styles/Header.module.css';
 import companyIcon from '../assets/Emi7.jpg';
 import {Link, useNavigate} from "react-router-dom";
+import propTypes from 'prop-types';
 
 function Header({inCart}) {
   const navigate = useNavigate();
@@ -44,6 +45,10 @@ function Header({inCart}) {
       </div>
     </header>
   );
+}
+
+Header.propTypes = {
+  inCart: propTypes.instanceOf(Map).isRequired
 }
 
 export default Header;

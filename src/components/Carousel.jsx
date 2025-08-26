@@ -1,7 +1,7 @@
 import styles from '../styles/Carousel.module.css';
 import Loading from "./Loading";
 import {useState, useEffect} from 'react'
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 function Carousel({products}) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -52,5 +52,13 @@ function Carousel({products}) {
       : <Loading />
   );
 }
+
+Carousel.propTypes = {
+  products: propTypes.arrayOf(propTypes.shape({
+    image: propTypes.string.isRequired,
+    title: propTypes.string.isRequired,
+  }),
+  ).isRequired,
+};
 
 export default Carousel;

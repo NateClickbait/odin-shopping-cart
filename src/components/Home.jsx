@@ -1,9 +1,10 @@
 import styles from "../styles/Home.module.css";
 import Carousel from "./Carousel";
 import {Link, useOutletContext} from "react-router-dom";
+import propTypes from "prop-types";
 
 function Home() {
-  const {products} = useOutletContext();
+  const {products = []} = useOutletContext();
 
   return (
     <div className={styles.home}>
