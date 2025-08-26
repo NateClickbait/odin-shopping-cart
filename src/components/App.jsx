@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import styles from '../styles/App.module.css'
 
 import Header from './Header';
 import { Outlet } from 'react-router-dom';

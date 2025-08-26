@@ -33,7 +33,7 @@ function ShoppingCart() {
             return (
               <div className={styles.product} key={product.title}>
                 <div className={styles.beginning}>
-                  <img src={product.image} className={styles.image} />
+                  <img src={product.image} className={styles.image} alt={product.title}/>
                   <div className={styles.titleContainer}>
                     <h3 className={styles.title}>{product.title}</h3>
                     <p className={styles.category}>{product.category}</p>
@@ -42,7 +42,7 @@ function ShoppingCart() {
                 <div className={styles.end}>
                   <input 
                     type='number' 
-                    id='amount-shopping-cart' 
+                    id={`amount-${product.title}`} 
                     name='amount-shopping-cart' 
                     aria-label='number of items'
                     min='1'

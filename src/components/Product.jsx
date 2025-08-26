@@ -1,4 +1,4 @@
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 import styles from "../styles/Product.module.css";
 import Loading from "./Loading";
 import { useState, useEffect } from "react";
@@ -7,6 +7,7 @@ function Product() {
   const {products, onSetInCart, inCart} = useOutletContext();
   const [isLoaded, setIsLoaded] = useState(false);
   const [amount, setAmount] = useState(1);
+  const {productName} = useParams();
 
   useEffect(() => {
     if (products.length !== 0) { 
@@ -16,9 +17,8 @@ function Product() {
 
   let product;
   if (isLoaded) {
-    const productTitle = decodeURIComponent(window.location.href.split('/').pop().toString());
     product = products.filter((productEncountered) => {
-      return productEncountered.title === productTitle;
+      return productEncountered.title === productName;
     })[0];
   } 
 
@@ -41,7 +41,7 @@ function Product() {
       <div className={styles.productContainer}>
         <article className={styles.productPage}>
           <div className={styles.imageContainer}>
-            <img className={styles.productImage} src={product.image} />
+            <img className={styles.productImage} src={product.image} alt={product.title}/>
           </div>
           <section className={styles.importantInfo}>
             <div className={styles.generalInfo}>

@@ -1,37 +1,36 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import Header from "../components/Header";
+import { createMemoryRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "../components/Home";
 
-const FakeShop = () => <p>Fake Shop</p>;
+describe('Home Component', () => {
+  const fakeProducts = [];
 
-const testRoutes = [
-  {
-    path: "/",
-    element: (
-      <Header />
-    ),
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "shop",
-        element: <FakeShop />,
-      },
-    ],
-  },
-];
+  const FakeApp = () => <Outlet context={{products: fakeProducts}}/>
+  const FakeShop = () => <p>Fake Shop</p>;
 
-function renderWithRouter() {
-  const fakeRouter = createMemoryRouter(testRoutes, {initialEntries: ['/']});
-  render(<RouterProvider router={fakeRouter} />);
-  return fakeRouter;
-}
+  const testRoutes = [
+    {
+      path: "/",
+      element: (
+        <FakeApp />
+      ),
+      children: [
+        {index: true, element: <Home />},
+        {
+          path: "shop",
+          element: <FakeShop />,
+        },
+      ],
+    },
+  ];
 
-describe.skip('Home Component', () => {
+  function renderWithRouter() {
+    const fakeRouter = createMemoryRouter(testRoutes, {initialEntries: ['/']});
+    render(<RouterProvider router={fakeRouter} />);
+    return fakeRouter;
+  }
+
   it('renders homepage main message', () => {
     renderWithRouter();
     const homepageMessage = screen.getByText(`The best deals, the best steals!!!`);
@@ -59,8 +58,9 @@ describe.skip('Home Component', () => {
 
   it('renders content display', () => {
     renderWithRouter();
-    const contentDisplay = screen.getByRole('region', {name: /^product display$/i});
+    const loading = screen.getByRole('region', {name: 'loading'});
 
-    expect(contentDisplay).toBeInTheDocument();
+
+    expect(loading).toBeInTheDocument();
   })
 });
